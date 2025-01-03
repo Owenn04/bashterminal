@@ -1,4 +1,4 @@
-// src/components/terminal/output.js
+
 import React, { useRef, useState } from 'react';
 import Input from './input.js';
 import './terminal.css';
@@ -19,7 +19,6 @@ const Output = () => {
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
         
-        // Calculate new width based on the input length
         const baseWidth = 50; 
         const newWidth = Math.max(baseWidth, e.target.value.length * 10); 
         setInputWidth(`${newWidth}px`); 
@@ -32,7 +31,7 @@ const Output = () => {
               ...prev,
               `${pathName}>`,
               'default text',
-              <br key={`${prev.length}-br1`} />, // Add a line break after the default text
+              <br key={`${prev.length}-br1`} />, 
           ]);
           setInputValue(''); 
       }
@@ -52,7 +51,7 @@ const Output = () => {
         overflowY: 'auto',
         overflowX: 'auto', 
         display: 'flex', 
-        flexDirection: 'column', // Use column direction
+        flexDirection: 'column', 
       }}>
         <pre style={{ 
                 whiteSpace: 'pre-wrap', 
@@ -61,13 +60,13 @@ const Output = () => {
                 boxSizing: 'border-box',
             }}>
                 <div className="output" style={{ 
-                  overflowY: 'auto', // Enable vertical scrolling for the output
-                  overflowX: 'auto', // Prevent horizontal scrolling
-                  height: 'calc(100% - 40px)', // Adjust height to fit the terminal
-                  margin: 0, // Removes default margin
+                  overflowY: 'auto', 
+                  overflowX: 'auto', 
+                  height: 'calc(100% - 40px)', 
+                  margin: 0, 
                 }}>
                     {outputText.map((line, index) => (
-                        <div key={index}>{line}</div> // Render each line
+                        <div key={index}>{line}</div> 
                     ))}
                 </div>
                 {pathName}&nbsp;

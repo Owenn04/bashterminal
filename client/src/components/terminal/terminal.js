@@ -12,7 +12,6 @@ const Terminal = () => {
   const resizeStart = useRef({ width: 0, height: 0 });
 
   const handleMouseDown = (e) => {
-    // Check if the mouse is down on the resize handle
     if (e.target.classList.contains('resize-handle')) {
       isResizing.current = true;
       resizeStart.current = { width: size.width, height: size.height, x: e.clientX, y: e.clientY };
@@ -30,7 +29,6 @@ const Terminal = () => {
       const newX = e.clientX - dragStart.current.x;
       const newY = e.clientY - dragStart.current.y;
 
-      // Ensure the rectangle stays within the window bounds
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
 
@@ -92,7 +90,7 @@ const Terminal = () => {
           cursor: 'se-resize',
         }}
         onMouseDown={(e) => {
-          e.stopPropagation(); // Prevent the parent div from registering the mouse down event
+          e.stopPropagation(); 
           isResizing.current = true;
           resizeStart.current = { width: size.width, height: size.height, x: e.clientX, y: e.clientY };
           document.addEventListener('mousemove', handleMouseMove);
