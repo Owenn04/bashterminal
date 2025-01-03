@@ -1,0 +1,34 @@
+/* src/components/terminal/terminal.css */
+.terminal {
+    background-color: black;
+    border: 5px solid #444; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    cursor: move;
+  }
+  
+.resize-handle {
+    width: 20px;
+    height: 20px;
+    background-color: #444;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: nwse-resize; 
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.scroll-stuff::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar */
+  background: transparent; /* Background color of scrollbar */
+}
+
+/* Hide scrollbar for Firefox */
+.scroll-stuff {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Optional: Hide scrollbar for Edge */
+.scroll-stuff {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+}
